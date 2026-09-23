@@ -1,0 +1,19 @@
+name: study2-zero-noise-reproduction
+environment: CoinGame-2
+dynamics: mdp
+n_episodes: 3000
+steps_per_episode: 50
+learning_seeds: [101]
+frameworks: [eqmarl_psi_plus, sctde]
+q_depolarizing: [0.0]
+noise:
+  definition: per_constituent_critic_qubit_per_network_leg
+  legs: [server_to_agent, agent_to_server]
+  backend: pauli_trajectory_adjoint
+  trajectories_per_expectation: 1
+  trajectory_bank_size: 256
+analysis:
+  smoothing_window: 10
+  targets: [20.0, 25.0]
+  final_window: 100
+

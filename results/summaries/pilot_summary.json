@@ -1,0 +1,144 @@
+{
+  "status": "completed",
+  "learning_trajectory_source": "official committed eQMARL raw metrics",
+  "learning_trajectories_are_reused_not_retrained": true,
+  "trajectory_seed_count": 3,
+  "network_seeds": [
+    101,
+    202,
+    303
+  ],
+  "target_reward": 20.0,
+  "crossing_iteration_zero_based": {
+    "eqmarl": 482,
+    "sctde": 1581
+  },
+  "default_network": {
+    "entanglement_rate_hz": 1000.0,
+    "entanglement_parallelism": 1,
+    "transmission_success_probability": 0.95,
+    "base_latency_s": 0.00025,
+    "distance_km": 10.0,
+    "fiber_speed_m_s": 200000000.0,
+    "fixed_quantum_processing_latency_s": 0.0,
+    "local_quantum_processing_s": 0.0005,
+    "quantum_channel_capacity": 8,
+    "classical_bandwidth_bps": 1000000000.0,
+    "classical_parallelism": 2,
+    "classical_fixed_processing_latency_s": 0.0,
+    "memory_initial_fidelity": 0.99,
+    "memory_t2_s": 1.0,
+    "memory_min_fidelity": 0.8,
+    "base_compute_step_s": 0.01
+  },
+  "default_mean_time_to_target_s": {
+    "eqmarl": 675.0256088960001,
+    "sctde": 838.7080576
+  },
+  "default_mean_resource_accounting": {
+    "eqmarl": {
+      "environment_steps": 24150.0,
+      "training_iterations": 483.0,
+      "simulated_wall_time_s": 675.0256088960001,
+      "compute_time_s": 253.57500000000002,
+      "entanglement_generation_time_s": 237.409,
+      "quantum_transmission_time_s": 33.8634,
+      "classical_communication_time_s": 150.178208896,
+      "classical_bytes_transmitted": 29476112.0,
+      "qubits_transmitted": 903016.0,
+      "entangled_states_generated": 237409.0,
+      "entangled_pairs_generated": 237409.0,
+      "entangled_resources_successfully_used": 193200.0,
+      "failed_quantum_transmissions": 45355.0,
+      "retries": 44209.0,
+      "states_discarded_memory_expiration": 0.0,
+      "quantum_link_busy_time_s": 33.8634,
+      "quantum_link_utilization": 0.0501660934276261,
+      "usable": true
+    },
+    "sctde": {
+      "environment_steps": 79100.0,
+      "training_iterations": 1582.0,
+      "simulated_wall_time_s": 838.7080576,
+      "compute_time_s": 791.0,
+      "entanglement_generation_time_s": 0.0,
+      "quantum_transmission_time_s": 0.0,
+      "classical_communication_time_s": 47.7080576,
+      "classical_bytes_transmitted": 31007200.0,
+      "qubits_transmitted": 0.0,
+      "entangled_states_generated": 0.0,
+      "entangled_pairs_generated": 0.0,
+      "entangled_resources_successfully_used": 0.0,
+      "failed_quantum_transmissions": 0.0,
+      "retries": 0.0,
+      "states_discarded_memory_expiration": 0.0,
+      "quantum_link_busy_time_s": 0.0,
+      "quantum_link_utilization": 0.0,
+      "usable": true
+    }
+  },
+  "default_quantum_favorable_fraction": 1.0,
+  "break_even_by_slice": [
+    {
+      "p_success": 0.55,
+      "agents": 2,
+      "distance_km": 10.0,
+      "memory_t2_s": 1.0,
+      "quantum_channel_capacity": 8,
+      "minimum_favorable_sampled_rate_hz": null,
+      "estimated_continuous_break_even_rate_hz": null
+    },
+    {
+      "p_success": 0.7,
+      "agents": 2,
+      "distance_km": 10.0,
+      "memory_t2_s": 1.0,
+      "quantum_channel_capacity": 8,
+      "minimum_favorable_sampled_rate_hz": 10000.0,
+      "estimated_continuous_break_even_rate_hz": 6708.16864250759
+    },
+    {
+      "p_success": 0.85,
+      "agents": 2,
+      "distance_km": 10.0,
+      "memory_t2_s": 1.0,
+      "quantum_channel_capacity": 8,
+      "minimum_favorable_sampled_rate_hz": 10000.0,
+      "estimated_continuous_break_even_rate_hz": 1119.2620079823812
+    },
+    {
+      "p_success": 0.95,
+      "agents": 2,
+      "distance_km": 10.0,
+      "memory_t2_s": 1.0,
+      "quantum_channel_capacity": 8,
+      "minimum_favorable_sampled_rate_hz": 1000.0,
+      "estimated_continuous_break_even_rate_hz": 591.9074085650841
+    },
+    {
+      "p_success": 1.0,
+      "agents": 2,
+      "distance_km": 10.0,
+      "memory_t2_s": 1.0,
+      "quantum_channel_capacity": 8,
+      "minimum_favorable_sampled_rate_hz": 1000.0,
+      "estimated_continuous_break_even_rate_hz": 454.01075071138223
+    }
+  ],
+  "official_source_files": {
+    "eqmarl": [
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-0.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-1.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-2.json"
+    ],
+    "sctde": [
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-0.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-1.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-2.json"
+    ]
+  },
+  "raw_outputs": [
+    "results/raw/pilot_learning_curves.csv",
+    "results/raw/pilot_sweep.csv"
+  ]
+}

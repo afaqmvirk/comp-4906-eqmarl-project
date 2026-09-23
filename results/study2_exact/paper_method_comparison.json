@@ -1,0 +1,70 @@
+{
+  "method": "Average five full reward trajectories by episode, then trailing 10-episode mean, then first crossing; zero-based indices; null means not reached within 3000 episodes.",
+  "rows": [
+    {
+      "condition": "classical",
+      "runs": 5,
+      "reward20_index": 1775,
+      "reward25_index": 2660,
+      "sources": [
+        "results/study2/raw/sctde_q0_seed101.json",
+        "results/study2/raw/sctde_q0_seed202.json",
+        "results/study2/raw/sctde_q0_seed303.json",
+        "results/study2/raw/sctde_q0_seed404.json",
+        "results/study2/raw/sctde_q0_seed505.json"
+      ]
+    },
+    {
+      "condition": "0",
+      "runs": 5,
+      "reward20_index": 834,
+      "reward25_index": 2026,
+      "sources": [
+        "results/feasibility/precision_v2/exact_density_q0_r1_seed101.json",
+        "results/study2_exact/raw/exact_density_q0_r1_seed202.json",
+        "results/study2_exact/raw/exact_density_q0_r1_seed303.json",
+        "results/study2_exact/raw/exact_density_q0_r1_seed404.json",
+        "results/study2_exact/raw/exact_density_q0_r1_seed505.json"
+      ]
+    },
+    {
+      "condition": "0.01",
+      "runs": 5,
+      "reward20_index": 1053,
+      "reward25_index": 1836,
+      "sources": [
+        "results/study2_exact/raw/exact_density_q0.01_r1_seed101.json",
+        "results/study2_exact/raw/exact_density_q0.01_r1_seed202.json",
+        "results/study2_exact/raw/exact_density_q0.01_r1_seed303.json",
+        "results/study2_exact/raw/exact_density_q0.01_r1_seed404.json",
+        "results/study2_exact/raw/exact_density_q0.01_r1_seed505.json"
+      ]
+    },
+    {
+      "condition": "0.03",
+      "runs": 5,
+      "reward20_index": 616,
+      "reward25_index": 1762,
+      "sources": [
+        "results/study2_exact/raw/exact_density_q0.03_r1_seed101.json",
+        "results/study2_exact/raw/exact_density_q0.03_r1_seed202.json",
+        "results/study2_exact/raw/exact_density_q0.03_r1_seed303.json",
+        "results/study2_exact/raw/exact_density_q0.03_r1_seed404.json",
+        "results/study2_exact/raw/exact_density_q0.03_r1_seed505.json"
+      ]
+    },
+    {
+      "condition": "0.1",
+      "runs": 5,
+      "reward20_index": 1257,
+      "reward25_index": 2576,
+      "sources": [
+        "results/feasibility/precision_v2/exact_density_q0.1_r1_seed101.json",
+        "results/feasibility/exact_noise_replication/exact_density_q0.1_r1_seed202.json",
+        "results/study2_exact/raw/exact_density_q0.1_r1_seed303.json",
+        "results/study2_exact/raw/exact_density_q0.1_r1_seed404.json",
+        "results/study2_exact/raw/exact_density_q0.1_r1_seed505.json"
+      ]
+    }
+  ]
+}

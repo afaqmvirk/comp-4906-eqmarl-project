@@ -1,0 +1,44 @@
+{
+  "files": {
+    "scripts/run_noise_feasibility.py": {
+      "before_sha256": "fc0026c226e60c182afcde7a04966f585ec5a9abe998a9dad8cd42bcd7ad5e81",
+      "after_sha256": "c08dc2dcdf8ce173d084951ec040b631f981e174e102c066672cc050c3d53433",
+      "changes": "comments and docstrings"
+    },
+    "scripts/run_study2_exact.py": {
+      "before_sha256": "a5ab7758061c311bb8ffa341a36cd9211093b4a60ab7da6b37dc81f64743ede3",
+      "after_sha256": "2aa82de7eda929eade33dbe9bb3f28b61bd9e44f0456979640b9ae5088f381e2",
+      "changes": "remove Markdown status output; accept recorded cleanup hashes"
+    },
+    "scripts/analyze_study2_exact.py": {
+      "before_sha256": "a429e08ac095c2b7fda582799527f7ae07e7910e182b863c5bd9f65ddfab3db1",
+      "after_sha256": "ebe712082fb5bf6ee8575ca74bfcb893902486e8ed5f3d3cbfe0061d51c4c062",
+      "changes": "remove Markdown output; accept recorded cleanup hashes"
+    },
+    "src/eqmarl_network_study/learning_noise/exact_study.py": {
+      "before_sha256": "f9c21bf3e50fb7c88fea77f47712b35ce91b844a9b3c60b85dc284a78b220c36",
+      "after_sha256": "9f168379613ea9d53a7ed02193566d8a128947330b6e9bd4c6cee2638f0cbbd3",
+      "changes": "validate recorded cleanup hashes"
+    },
+    "src/eqmarl_network_study/learning_noise/exact_critic.py": {
+      "before_sha256": "9becc87bdcb08fda01a201d2837288dfe7a928342b019e18d91d50ac0d31c277",
+      "after_sha256": "6c8553eb980d4313289e588a22bad8079569b063dc972e2bd5e0588a5ebfd1ce",
+      "changes": "comments and docstrings"
+    },
+    "src/eqmarl_network_study/learning_noise/training.py": {
+      "before_sha256": "e705368e11aae7fe6b29c3c39a79c8249a9b75665d2dab8f060d2c4c47c32afe",
+      "after_sha256": "e07bba3e6c979a2c8aefd497d68c57aeacfb02b2dea5030d098773f676ae893b",
+      "changes": "comments and docstrings"
+    },
+    "src/eqmarl_network_study/learning_noise/noisy_critic.py": {
+      "before_sha256": "5d5521f667f2a83d3e32d9e9b32b6f5d009e1c9c423f29efcd7059faecc0dc64",
+      "after_sha256": "049b94dbabd097570ca6c3b9bb7866ea3ef495458fda9f087ebb4d9467f77ac9",
+      "changes": "comments and docstrings"
+    },
+    "configs/study2_pilot.yaml": {
+      "before_sha256": "19a56c164bb3d281d7ce2042a856f84d25c121aa9e07d96fcd02a6f57aaceaf1",
+      "after_sha256": "9cd87c98468f31dc1d2d5615727d7b89a4c53d414b653089bf83887cb87329b7",
+      "changes": "comments"
+    }
+  }
+}

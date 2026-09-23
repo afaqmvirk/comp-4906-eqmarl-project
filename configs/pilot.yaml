@@ -1,0 +1,45 @@
+name: coingame-mdp-network-pilot
+protocol:
+  agents: 2
+  qubits_per_agent: 4
+  observations_per_step: 2
+  float_bytes: 4
+  reward_bytes: 4
+  eqmarl_gradient_floats_per_observation: 1
+  classical_activation_floats_per_observation: 12
+  classical_gradient_floats_per_observation: 12
+  quantum_ack_bytes: 32
+network:
+  entanglement_rate_hz: 1000.0
+  entanglement_parallelism: 1
+  transmission_success_probability: 0.95
+  base_latency_s: 0.00025
+  distance_km: 10.0
+  fiber_speed_m_s: 2.0e8
+  fixed_quantum_processing_latency_s: 0.0
+  local_quantum_processing_s: 0.0005
+  quantum_channel_capacity: 8
+  classical_bandwidth_bps: 1.0e9
+  classical_parallelism: 2
+  classical_fixed_processing_latency_s: 0.0
+  memory_initial_fidelity: 0.99
+  memory_t2_s: 1.0
+  memory_min_fidelity: 0.80
+  base_compute_step_s: 0.010
+learning:
+  metric: undiscounted_reward
+  target_reward: 20.0
+  steps_per_iteration: 50
+  smoothing_window: 10
+  trajectory_seeds: 3
+  quantum_experiment: coingame_maa2c_mdp_eqmarl_psi+
+  classical_experiment: coingame_maa2c_mdp_sctde
+  official_repo: upstream/eqmarl
+network_seeds: [101, 202, 303]
+sweep:
+  axes:
+    entanglement_rate_hz:
+      values: [10, 100, 1000, 10000, 100000]
+    transmission_success_probability:
+      values: [0.55, 0.70, 0.85, 0.95, 1.0]
+

@@ -1,0 +1,197 @@
+\documentclass[12pt]{article}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{libertinus}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\titleformat{\section}{\bfseries\normalsize}{}{0pt}{}
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+\pagestyle{plain}
+\raggedbottom
+
+\newcommand{\projecttitle}{Resilience of Quantum Multi-Agent Reinforcement Learning under Communication Noise and Limited Measurements}
+\hypersetup{pdftitle={\projecttitle},pdfauthor={Afaq Virk},
+  pdfsubject={COMP 4906 Honours Thesis Preproposal}}
+
+\begin{document}
+
+\begin{flushright}
+    {\Large\bfseries \projecttitle}\\[3pt]
+    Afaq Virk\\[-1pt]
+    COMP 4906 -- Honours Thesis Preproposal\\[-1pt]
+    Dr. Sriram Subramanian \&\\[-1pt]
+    Dr. Michel Barbeau
+\end{flushright}
+
+\vspace{-4pt}
+
+\section{Introduction}
+
+Multi-agent reinforcement learning (MARL) allows decentralized agents to learn cooperative behaviour through repeated interaction with a shared environment. The eQMARL framework uses an entangled quantum critic to coordinate this learning and reports improved performance under ideal quantum communication~\cite{eqmarl}. The critic guides training, while the trained agents choose actions locally.
+
+However, eQMARL's distributed critic still requires quantum-state transmission and repeated circuit measurements during training. In non-ideal physical implementations, communication noise can alter the states used to estimate joint values, while limited measurements introduce uncertainty into value and gradient estimates. These estimates guide the agents' updates, so their quality and measurement requirements may affect both learning performance and the resources needed to achieve it. The proposed simulations will investigate whether eQMARL’s reported benefits over the classical baseline persist, diminish, or disappear under these constraints, addressing the following research question:
+
+\begin{quote}
+\textbf{To what extent do eQMARL's reported learning and sample-efficiency benefits persist under physically motivated communication and measurement constraints?}
+\end{quote}
+
+The project will examine how changes in critic estimates and gradients influence learning. Environment-sample efficiency will be measured through the environment interactions required to reach a specified performance level, with measurement effort recorded alongside them to quantify the resources needed to preserve any benefit.
+
+\section{Motivation and Related Work}
+
+Classical actor-critic methods use information available during training to support decentralized policies~\cite{lowe}. Quantum reinforcement learning extends this approach with trainable quantum circuits~\cite{jerbi}. DeRieux and Saad's eQMARL distributes a critic across agents, couples its branches through entangled inputs, and estimates a joint value at a central server~\cite{eqmarl}. This architecture links communication quality to the learning signals shared across agents.
+
+Skolik et al.\ study how shot noise and hardware errors affect quantum reinforcement learning, including methods for allocating measurements during training~\cite{skolik}. Schuld et al.\ describe gradient estimation through quantum circuit evaluations~\cite{schuld}, while Wang et al.\ analyse how noise can suppress gradients in variational circuits~\cite{wang}. Together, these works motivate examining both the accuracy of learning signals and the resources used to estimate them.
+
+Quantum-network research identifies entanglement generation, transmission, and storage as essential parts of distributed operation~\cite{wehner}. NetSquid supports the simulation of these processes~\cite{netsquid}, and Main et al.\ demonstrate distributed quantum computation across an optical link~\cite{main}.
+
+\newpage
+\section{Project Scope}
+
+The initial benchmark will be the two-agent CoinGame implementation supplied with eQMARL, based on the social-dilemma environment of Lerer and Peysakhovich~\cite{lerer}. The existing implementation supports fresh training and exact noisy simulation of the eight-qubit critic. The main comparisons will include ideal-reference eQMARL, eQMARL under communication noise and finite measurements, and the authors' split classical baseline (sCTDE), trained and evaluated under matched conditions.
+
+Communication noise will initially be modelled as independent depolarization during the distribution and return of critic qubits. Noise levels and measurement budgets will be varied separately and together. A measurement budget specifies the number of repeated circuit executions, or shots, used to estimate a quantum output. Finite-shot training will cover quantum outputs and gradients, with initial comparisons isolating critic measurements before extending to the actor and critic together. Exact calculations will be used to validate the implementation.
+
+The analysis will examine:
+
+\begin{itemize}
+    \item how communication noise affects the experience needed to reach a given performance level;
+    \item how measurement budgets affect learning progress, policy quality, and stability;
+    \item whether additional measurements help maintain learning performance under noise; and
+    \item how changes in critic estimates and gradients relate to learning behaviour.
+\end{itemize}
+
+Experiments will use multiple independent training seeds and a common evaluation procedure. Saved policies will be evaluated on fresh episodes, and the analysis will report learning curves, target attainment, final performance, and uncertainty across runs~\cite{agarwal,patterson}. Comparisons with the classical baseline will assess how these constraints affect any observed advantage in environment-sample efficiency. Environment interactions, circuit evaluations, and cumulative measurement shots, including those used for gradient estimation, will be recorded separately. Parameter ranges, performance targets, and additional controls will be refined during the first-term investigation and specified before the main comparisons.
+
+Preliminary work has reproduced the authors' threshold calculations and completed a matched-seed depolarizing-noise pilot. Noisy eQMARL continued to learn, with increased training requirements at the highest tested noise level and target-dependent differences from the classical baseline.
+
+Further investigation may consider additional benchmark environments and matched quantum controls without inter-agent entanglement to examine the generality of the findings and the role of entanglement. Pareto-frontier analysis could identify efficient trade-offs between environment interactions and cumulative measurement effort at common performance targets and training horizons. Other extensions may include transmission loss and retries, memory decay, local gate and readout errors, and adaptive measurement allocation. The existing network-cost model can support analysis of execution time under selected hardware assumptions. Initial findings will guide measurement-budget selection and the choice of extensions.
+
+The experiments will simulate quantum circuits and agent training on classical computers using Python, TensorFlow, TensorFlow Quantum, and Cirq. The implementation will extend the existing eQMARL code and build on the validated depolarizing-noise simulator and classical baseline runs. Pilot runtimes will guide the scale of the main experiments.
+
+\newpage
+\section{Expected Deliverables}
+
+\begin{itemize}
+    \item A focused literature review of quantum MARL, noisy quantum learning, measurement allocation, and quantum-network constraints;
+    \item A documented reproduction of the selected eQMARL benchmark and its classical comparison;
+    \item A validated implementation supporting communication noise and finite-shot training, including quantum outputs and gradient estimates;
+    \item An assessment of eQMARL's learning benefits under communication and measurement constraints, supported by analysis of critic estimates and gradients;
+    \item Statistical analysis using multiple training seeds and fresh-episode evaluation, supported by learning curves and resource measurements;
+    \item A full thesis proposal defining the refined methodology, preliminary findings, and second-term experimental plan;
+    \item A reproducible software and results package containing source code, configurations, tests, and analysis; and
+    \item A final Honours Thesis report and an oral presentation, if required.
+\end{itemize}
+
+\section{First-Term Thesis Milestones}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}@{\hspace{1em}}X@{}}
+\toprule
+\textbf{Period / Deadline} & \textbf{Milestone} \\
+\midrule
+\textbf{September 9, 2026} & \textbf{Submit Thesis Pre-Proposal.} \\[14pt]
+September 10--23 & Complete the focused literature review; analyse the existing pilots and refine the research question. \\[14pt]
+September 24--October 7 & Implement finite-measurement training components; validate outputs and gradients against exact calculations. \\[14pt]
+October 8--21 & Run pilot comparisons; select initial noise and measurement settings and establish the policy-evaluation procedure. \\[14pt]
+October 22--November 4 & Run multi-seed experiments and examine relationships between communication noise, measurement effort, and learning performance. \\[14pt]
+November 5--17 & Analyse variability and learning mechanisms; prepare preliminary figures and the full proposal draft. \\[14pt]
+November 18--December 1 & Incorporate feedback; select follow-up experiments and develop the second-term research plan. \\[14pt]
+December 2--11 & Complete and revise the formal thesis proposal, experimental documentation, and second-term schedule. \\[14pt]
+\textbf{December 11, 2026} & \textbf{Submit Full Proposal Report.} \\[14pt]
+\bottomrule
+\end{tabularx}
+
+\vspace{4pt}
+Progress will be reviewed semimonthly/monthly as schedules permit. Scope and methodology will be refined through these reviews and the first-term findings.
+
+\newpage
+{\fontsize{9}{10.5}\selectfont
+\begin{thebibliography}{12}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+
+\bibitem{eqmarl}
+A. DeRieux and W. Saad,
+``\href{https://openreview.net/forum?id=cR5GTis5II}{eQMARL: Entangled Quantum Multi-Agent Reinforcement Learning for Distributed Cooperation over Quantum Channels},''
+\textit{International Conference on Learning Representations (ICLR)}, 2025.
+\href{https://arxiv.org/abs/2405.17486}{arXiv:2405.17486}.
+
+\bibitem{lowe}
+R. Lowe, Y. Wu, A. Tamar, J. Harb, P. Abbeel, and I. Mordatch,
+``\href{https://proceedings.neurips.cc/paper_files/paper/2017/hash/68a9750337a418a86fe06c1991a1d64c-Abstract.html}{Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments},''
+\textit{Advances in Neural Information Processing Systems}, vol. 30, 2017.
+
+\bibitem{jerbi}
+S. Jerbi, C. Gyurik, S. C. Marshall, H. J. Briegel, and V. Dunjko,
+``\href{https://proceedings.neurips.cc/paper/2021/hash/eec96a7f788e88184c0e713456026f3f-Abstract.html}{Parametrized Quantum Policies for Reinforcement Learning},''
+\textit{Advances in Neural Information Processing Systems}, vol. 34, 2021.
+
+\bibitem{skolik}
+A. Skolik, S. Mangini, T. B\"ack, C. Macchiavello, and V. Dunjko,
+``\href{https://doi.org/10.1140/epjqt/s40507-023-00166-1}{Robustness of Quantum Reinforcement Learning Under Hardware Errors},''
+\textit{EPJ Quantum Technology}, vol. 10, Article 8, 2023.
+doi:10.1140/epjqt/s40507-023-00166-1.
+
+\bibitem{schuld}
+M. Schuld, V. Bergholm, C. Gogolin, J. Izaac, and N. Killoran,
+``\href{https://doi.org/10.1103/PhysRevA.99.032331}{Evaluating Analytic Gradients on Quantum Hardware},''
+\textit{Physical Review A}, vol. 99, Article 032331, 2019.
+doi:10.1103/PhysRevA.99.032331.
+
+\bibitem{wang}
+S. Wang, E. Fontana, M. Cerezo, K. Sharma, A. Sone, L. Cincio, and P. J. Coles,
+``\href{https://doi.org/10.1038/s41467-021-27045-6}{Noise-Induced Barren Plateaus in Variational Quantum Algorithms},''
+\textit{Nature Communications}, vol. 12, Article 6961, 2021.
+doi:10.1038/s41467-021-27045-6.
+
+\bibitem{wehner}
+S. Wehner, D. Elkouss, and R. Hanson,
+``\href{https://doi.org/10.1126/science.aam9288}{Quantum Internet: A Vision for the Road Ahead},''
+\textit{Science}, vol. 362, no. 6412, Article eaam9288, 2018.
+doi:10.1126/science.aam9288.
+
+\bibitem{netsquid}
+T. Coopmans, R. Knegjens, A. Dahlberg, D. Maier, L. Nijsten, et al.,
+``\href{https://doi.org/10.1038/s42005-021-00647-8}{NetSquid, a NETwork Simulator for QUantum Information Using Discrete Events},''
+\textit{Communications Physics}, vol. 4, Article 164, 2021.
+doi:10.1038/s42005-021-00647-8.
+
+\bibitem{main}
+D. Main, P. Drmota, D. P. Nadlinger, E. M. Ainley, A. Agrawal, B. C. Nichol,
+R. Srinivas, G. Araneda, and D. M. Lucas,
+``\href{https://doi.org/10.1038/s41586-024-08404-x}{Distributed Quantum Computing Across an Optical Network Link},''
+\textit{Nature}, 2025. doi:10.1038/s41586-024-08404-x.
+
+\bibitem{lerer}
+A. Lerer and A. Peysakhovich,
+``\href{https://arxiv.org/abs/1707.01068}{Maintaining Cooperation in Complex Social Dilemmas Using Deep Reinforcement Learning},''
+\textit{arXiv preprint arXiv:1707.01068}, 2017.
+
+\bibitem{agarwal}
+R. Agarwal, M. Schwarzer, P. S. Castro, A. C. Courville, and M. G. Bellemare,
+``\href{https://papers.nips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html}{Deep Reinforcement Learning at the Edge of the Statistical Precipice},''
+\textit{Advances in Neural Information Processing Systems}, vol. 34, 2021.
+
+\bibitem{patterson}
+A. Patterson, S. Neumann, M. White, and A. White,
+``\href{https://jmlr.org/papers/v25/23-0183.html}{Empirical Design in Reinforcement Learning},''
+\textit{Journal of Machine Learning Research}, vol. 25, no. 318, pp. 1--63, 2024.
+
+\end{thebibliography}
+}
+\end{document}

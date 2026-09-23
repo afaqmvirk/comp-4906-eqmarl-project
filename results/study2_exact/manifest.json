@@ -1,0 +1,276 @@
+{
+  "schema": 1,
+  "config": {
+    "name": "study2-exact-depolarizing-rerun-v1",
+    "source_grid": "configs/study2_pilot.yaml",
+    "episodes": 3000,
+    "evaluation_episodes": 100,
+    "chunk_episodes": 500,
+    "checkpoint_every": 100,
+    "workers": 3,
+    "threads_per_worker": 2,
+    "max_failures_per_job": 3,
+    "output_root": "results/study2_exact",
+    "primary_window": 100,
+    "sensitivity_window": 10,
+    "targets": [
+      20,
+      25
+    ],
+    "priority_q": [
+      0.0,
+      0.1,
+      0.01,
+      0.03
+    ],
+    "existing_exact": [
+      "results/feasibility/precision_v2/exact_density_q0_r1_seed101.json",
+      "results/feasibility/precision_v2/exact_density_q0.1_r1_seed101.json",
+      "results/feasibility/exact_noise_replication/exact_density_q0.1_r1_seed202.json"
+    ]
+  },
+  "source_grid_sha256": "19a56c164bb3d281d7ce2042a856f84d25c121aa9e07d96fcd02a6f57aaceaf1",
+  "code_sha256": {
+    "scripts/run_noise_feasibility.py": "fc0026c226e60c182afcde7a04966f585ec5a9abe998a9dad8cd42bcd7ad5e81",
+    "scripts/run_study2_exact.py": "a5ab7758061c311bb8ffa341a36cd9211093b4a60ab7da6b37dc81f64743ede3",
+    "scripts/analyze_study2_exact.py": "a429e08ac095c2b7fda582799527f7ae07e7910e182b863c5bd9f65ddfab3db1",
+    "src/eqmarl_network_study/learning_noise/exact_study.py": "f9c21bf3e50fb7c88fea77f47712b35ce91b844a9b3c60b85dc284a78b220c36",
+    "src/eqmarl_network_study/learning_noise/exact_critic.py": "9becc87bdcb08fda01a201d2837288dfe7a928342b019e18d91d50ac0d31c277",
+    "src/eqmarl_network_study/learning_noise/training.py": "e705368e11aae7fe6b29c3c39a79c8249a9b75665d2dab8f060d2c4c47c32afe",
+    "src/eqmarl_network_study/learning_noise/noisy_critic.py": "5d5521f667f2a83d3e32d9e9b32b6f5d009e1c9c423f29efcd7059faecc0dc64"
+  },
+  "records": [
+    {
+      "id": "eqmarl_psi_plus_q0_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.0,
+      "seed": 101,
+      "origin": "existing_exact",
+      "path": "results/feasibility/precision_v2/exact_density_q0_r1_seed101.json",
+      "source_sha256": "b60081f51512544a469b5b70bfd69cd444377e36da73c56d60887b8cd0db8797"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.001_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.001,
+      "seed": 101,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.001_r1_seed101.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.003_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.003,
+      "seed": 101,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.003_r1_seed101.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.01_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.01,
+      "seed": 101,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.01_r1_seed101.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.03_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.03,
+      "seed": 101,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.03_r1_seed101.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.05_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.05,
+      "seed": 101,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.05_r1_seed101.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.1_seed101",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.1,
+      "seed": 101,
+      "origin": "existing_exact",
+      "path": "results/feasibility/precision_v2/exact_density_q0.1_r1_seed101.json",
+      "source_sha256": "900dcf2d6eb80a9efe871ae54ef62ecf1ebf10d6b3e784bb19aa3151bc59b44a"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0_seed202",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.0,
+      "seed": 202,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0_r1_seed202.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.01_seed202",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.01,
+      "seed": 202,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.01_r1_seed202.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.03_seed202",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.03,
+      "seed": 202,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.03_r1_seed202.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.1_seed202",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.1,
+      "seed": 202,
+      "origin": "existing_exact",
+      "path": "results/feasibility/exact_noise_replication/exact_density_q0.1_r1_seed202.json",
+      "source_sha256": "d9f272e640832f67b3cca620059e4da173db2f00770bc3cc59e76ddad456a2bb"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0_seed303",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.0,
+      "seed": 303,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0_r1_seed303.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.01_seed303",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.01,
+      "seed": 303,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.01_r1_seed303.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.03_seed303",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.03,
+      "seed": 303,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.03_r1_seed303.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.1_seed303",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.1,
+      "seed": 303,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.1_r1_seed303.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0_seed404",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.0,
+      "seed": 404,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0_r1_seed404.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.01_seed404",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.01,
+      "seed": 404,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.01_r1_seed404.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.03_seed404",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.03,
+      "seed": 404,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.03_r1_seed404.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.1_seed404",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.1,
+      "seed": 404,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.1_r1_seed404.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0_seed505",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.0,
+      "seed": 505,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0_r1_seed505.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.01_seed505",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.01,
+      "seed": 505,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.01_r1_seed505.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.03_seed505",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.03,
+      "seed": 505,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.03_r1_seed505.json"
+    },
+    {
+      "id": "eqmarl_psi_plus_q0.1_seed505",
+      "framework": "eqmarl_psi_plus",
+      "q": 0.1,
+      "seed": 505,
+      "origin": "new_exact",
+      "path": "results/study2_exact/raw/exact_density_q0.1_r1_seed505.json"
+    },
+    {
+      "id": "sctde_q0_seed101",
+      "framework": "sctde",
+      "q": 0.0,
+      "seed": 101,
+      "origin": "existing_classical",
+      "path": "results/study2/raw/sctde_q0_seed101.json",
+      "source_sha256": "2266e074a23c406750ba8b5ba2bba636f0078830f1b54afa47f56d3016d4316c"
+    },
+    {
+      "id": "sctde_q0_seed202",
+      "framework": "sctde",
+      "q": 0.0,
+      "seed": 202,
+      "origin": "existing_classical",
+      "path": "results/study2/raw/sctde_q0_seed202.json",
+      "source_sha256": "cb00393b465f246a070f1fe671d09a2224c27894c9da963c4a40d620c05552fb"
+    },
+    {
+      "id": "sctde_q0_seed303",
+      "framework": "sctde",
+      "q": 0.0,
+      "seed": 303,
+      "origin": "existing_classical",
+      "path": "results/study2/raw/sctde_q0_seed303.json",
+      "source_sha256": "8709a30e42b479b2b7c3938cad5fdae32b018592b4b34f77e287e4b438780975"
+    },
+    {
+      "id": "sctde_q0_seed404",
+      "framework": "sctde",
+      "q": 0.0,
+      "seed": 404,
+      "origin": "existing_classical",
+      "path": "results/study2/raw/sctde_q0_seed404.json",
+      "source_sha256": "50065543fadf98c0b2d214425221c739f7ba6625ccfc898c38dbdad3184b3750"
+    },
+    {
+      "id": "sctde_q0_seed505",
+      "framework": "sctde",
+      "q": 0.0,
+      "seed": 505,
+      "origin": "existing_classical",
+      "path": "results/study2/raw/sctde_q0_seed505.json",
+      "source_sha256": "06ebcac4f58d92b024cae8bd17ace2db372be0b1f9dbb0d0bf0c6f8c3cdd135e"
+    }
+  ]
+}

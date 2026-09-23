@@ -1,0 +1,45 @@
+name: broad-network-regime-sweep
+protocol:
+  agents: 2
+  qubits_per_agent: 4
+  observations_per_step: 2
+  quantum_ack_bytes: 32
+network:
+  entanglement_rate_hz: 1000.0
+  transmission_success_probability: 0.95
+  base_latency_s: 0.00025
+  distance_km: 10.0
+  fiber_speed_m_s: 2.0e8
+  local_quantum_processing_s: 0.0005
+  quantum_channel_capacity: 8
+  classical_bandwidth_bps: 1.0e9
+  classical_parallelism: 2
+  memory_initial_fidelity: 0.99
+  memory_t2_s: 1.0
+  memory_min_fidelity: 0.80
+  base_compute_step_s: 0.010
+learning:
+  metric: undiscounted_reward
+  target_reward: 20.0
+  steps_per_iteration: 50
+  smoothing_window: 10
+  trajectory_seeds: 10
+  quantum_experiment: coingame_maa2c_mdp_eqmarl_psi+
+  classical_experiment: coingame_maa2c_mdp_sctde
+  official_repo: upstream/eqmarl
+network_seeds: [101, 202, 303, 404, 505]
+sweep:
+  axes:
+    entanglement_rate_hz:
+      logspace: [0, 6, 13]
+    transmission_success_probability:
+      linspace: [0.50, 1.0, 11]
+    distance_km:
+      values: [0, 10, 50, 100]
+    memory_t2_s:
+      values: [0.001, 0.01, 0.1, 1.0]
+    agents:
+      values: [2, 4, 8]
+    quantum_channel_capacity:
+      values: [2, 8, 32]
+

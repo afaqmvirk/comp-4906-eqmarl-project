@@ -1,0 +1,75 @@
+{
+  "scope": "frozen-critic measurement simulation, no policy or gradient updates",
+  "trials": 500,
+  "seed": 300101,
+  "transitions": 500,
+  "scale": 3.939822196960449,
+  "settings": {
+    "pilot_shots_per_active_value": 64,
+    "min_final_shots": 64,
+    "max_final_shots": 8192,
+    "margin_floor": 0.02,
+    "z": 1.96,
+    "allocation_margin": "raw",
+    "independent_pilot_and_final": true,
+    "pilot_included_in_budget": true
+  },
+  "mean_total_shots_per_transition": 2307.05456,
+  "mean_fraction_hitting_cap": 0.071932,
+  "expectation_min": -0.1064869686961174,
+  "expectation_max": 0.09305840730667114,
+  "median_absolute_true_advantage": 0.17951068321145214,
+  "fraction_margin_ge_floor": 0.9,
+  "results": {
+    "adaptive": {
+      "mse": {
+        "mean": 0.06403988757538903,
+        "monte_carlo_se": 0.000231392739923184
+      },
+      "sign_error": {
+        "mean": 0.13711199999999998,
+        "monte_carlo_se": 0.0006235387021076174
+      },
+      "sign_error_margin_ge_floor": {
+        "mean": 0.10352444444444445,
+        "monte_carlo_se": 0.0006197760549560143
+      },
+      "advantage_weighted_sign_error": {
+        "mean": 0.02067089359144471,
+        "monte_carlo_se": 0.00020867496866870753
+      },
+      "rmse": 0.25306103527684587,
+      "mean_bias": -0.0003834871551914084
+    },
+    "fixed": {
+      "mse": {
+        "mean": 0.0065478597612709565,
+        "monte_carlo_se": 2.953403321344155e-05
+      },
+      "sign_error": {
+        "mean": 0.105828,
+        "monte_carlo_se": 0.0005712595793630318
+      },
+      "sign_error_margin_ge_floor": {
+        "mean": 0.06815555555555557,
+        "monte_carlo_se": 0.0004930161206517936
+      },
+      "advantage_weighted_sign_error": {
+        "mean": 0.008859333066536036,
+        "monte_carlo_se": 7.549092072588865e-05
+      },
+      "rmse": 0.08091884676186974,
+      "mean_bias": -0.00031629642208654723
+    }
+  },
+  "limitations": [
+    "Repeated measurements of one frozen critic are not independent training seeds.",
+    "No finite-shot parameter-shift gradients or noisy training are simulated here.",
+    "Allocation uses a normal-approximation heuristic, not a confidence guarantee."
+  ],
+  "q": 0.1,
+  "training_seed": 101,
+  "source_weights": "results/feasibility/precision_v2/exact_density_q0.1_r1_seed101_weights.npz",
+  "frozen_model": "trained checkpoint",
+  "diagnostic_environment_seed": 200101
+}

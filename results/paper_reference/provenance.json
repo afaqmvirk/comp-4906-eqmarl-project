@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "paper_fidelity": {
+    "upstream_repository": "https://github.com/news-vt/eqmarl",
+    "tag": "paper-iclr2025",
+    "expected_commit": "62917c087f7bda38338df7a738692169d90f307c",
+    "actual_commit": "62917c087f7bda38338df7a738692169d90f307c",
+    "upstream_worktree_clean_at_start": true,
+    "training_runner_modified": false,
+    "full_configs_modified": false,
+    "seeds_set": false,
+    "seed_note": "The upstream runner does not accept or record seeds. Repeated rounds therefore reproduce the paper protocol, but not its exact RNG states."
+  },
+  "runtime": {
+    "python": "3.9.19 (main, Aug 14 2024, 05:11:09) \n[Clang 18.1.8 ]",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "packages": {
+      "cirq": "0.13.1",
+      "gymnasium": "0.29.1",
+      "minigrid": "2.3.1",
+      "numpy": "1.26.4",
+      "pandas": "2.2.2",
+      "qutip": "5.0.1",
+      "scipy": "1.13.0",
+      "sympy": "1.8",
+      "tensorflow": "2.7.0",
+      "tensorflow-quantum": "0.7.2"
+    }
+  },
+  "paper_reported_crossing_indices": {
+    "eqmarl": {
+      "20": 568,
+      "25": 2332
+    },
+    "sctde": {
+      "20": 1640,
+      "25": 2615
+    }
+  },
+  "runs": {
+    "sctde": {
+      "status": "complete",
+      "directory": "results/paper_reference/raw/full/sctde/20260904T144053",
+      "summary": {
+        "metric": "metrics.undiscounted_reward",
+        "rounds": 10,
+        "episodes_per_round": 3000,
+        "paper_matched_definition": "mean across rounds at each zero-based episode index, then pandas rolling(window=10).mean(), then first value >= target",
+        "paper_matched_crossing_index": {
+          "20": 1718,
+          "25": 2621
+        },
+        "per_run_rolling10_crossing_index": {
+          "20": [
+            1472,
+            1639,
+            1530,
+            1605,
+            1802,
+            1925,
+            1340,
+            1583,
+            1677,
+            1579
+          ],
+          "25": [
+            1856,
+            2389,
+            1978,
+            1989,
+            2284,
+            2527,
+            1949,
+            2220,
+            2320,
+            2269
+          ]
+        },
+        "final_100_episode_mean_by_round": [
+          25.21,
+          24.91,
+          25.37,
+          24.94,
+          25.29,
+          25.06,
+          25.27,
+          24.88,
+          24.12,
+          24.84
+        ],
+        "files": [
+          {
+            "name": "metrics-0.json",
+            "sha256": "2197ccb08a136b64833919c9d7e3cea08f18b10732984904f31d50f1d64a2d9c"
+          },
+          {
+            "name": "metrics-1.json",
+            "sha256": "bb066a132dbb4cbbf5b48c5acf869f9309973b18b65dd4b614baeae5b74add95"
+          },
+          {
+            "name": "metrics-2.json",
+            "sha256": "41cebe4750d8311543914ab7d287c16ae557745563dddaaa2299ae2c861dd812"
+          },
+          {
+            "name": "metrics-3.json",
+            "sha256": "8076357894f1c2334481b4cc9c5ce1e12a8b23a9cba8c2e6e06405eb81efcf76"
+          },
+          {
+            "name": "metrics-4.json",
+            "sha256": "190d506923bbc5393992d281f27974354a473efce1a7cf2a14ab01e637508483"
+          },
+          {
+            "name": "metrics-5.json",
+            "sha256": "cda59c2a48c2727ff9d46a0def8ca85c827a4909a539df458528fc095c112474"
+          },
+          {
+            "name": "metrics-6.json",
+            "sha256": "c957546c1f6134ed4196ae986106bfbed406b05427ecc1193956cb2ca28bc481"
+          },
+          {
+            "name": "metrics-7.json",
+            "sha256": "b13e0b830757656fdf4401feb66699b48835da4c385c2c9fa6044bf9abb0ab2f"
+          },
+          {
+            "name": "metrics-8.json",
+            "sha256": "9808781e2b986a60d635accb2d9b0e43df9dad3af594cf2348c2b1fb4d871419"
+          },
+          {
+            "name": "metrics-9.json",
+            "sha256": "73e85859155e3c2c3945590fbac77c8f6714839ddd25084542805664b8a32411"
+          }
+        ]
+      }
+    },
+    "eqmarl": {
+      "status": "complete",
+      "directory": "results/paper_reference/raw/full/eqmarl/recovered_combined",
+      "summary": {
+        "metric": "metrics.undiscounted_reward",
+        "rounds": 10,
+        "episodes_per_round": 3000,
+        "paper_matched_definition": "mean across rounds at each zero-based episode index, then pandas rolling(window=10).mean(), then first value >= target",
+        "paper_matched_crossing_index": {
+          "20": 613,
+          "25": 2380
+        },
+        "per_run_rolling10_crossing_index": {
+          "20": [
+            508,
+            615,
+            638,
+            559,
+            536,
+            510,
+            570,
+            450,
+            459,
+            560
+          ],
+          "25": [
+            875,
+            1209,
+            1254,
+            1727,
+            909,
+            1295,
+            924,
+            981,
+            1021,
+            884
+          ]
+        },
+        "final_100_episode_mean_by_round": [
+          24.26,
+          24.86,
+          24.6,
+          24.63,
+          25.58,
+          24.12,
+          22.64,
+          24.58,
+          24.67,
+          24.02
+        ],
+        "files": [
+          {
+            "name": "metrics-0.json",
+            "sha256": "209bc34212134b2b0250ca1b3ae518b8e9b0b4711dc96c4fa6d8a024788bbb9c"
+          },
+          {
+            "name": "metrics-1.json",
+            "sha256": "d137161925208bf3c894d25ca673e63465747dc6a409f43d1bad1681ab352a0d"
+          },
+          {
+            "name": "metrics-2.json",
+            "sha256": "382bed6b46f984965656178296a3a36703da2be090923aa3b1b330884e59bcc7"
+          },
+          {
+            "name": "metrics-3.json",
+            "sha256": "2acdf44f81ab8d851555e22d13bb2762008e04b6536f14d3f28a8b7b813d39e7"
+          },
+          {
+            "name": "metrics-4.json",
+            "sha256": "869d26722735cb08187614675a767a821ef22c155f77c980fbbf1ec113e0c71d"
+          },
+          {
+            "name": "metrics-5.json",
+            "sha256": "6e39b396f7311508aade50eea68f660ec70e26b8758b4689acb8842bbbe4cdd8"
+          },
+          {
+            "name": "metrics-6.json",
+            "sha256": "897a5b7fbdab6a7f1546bdcb3dffca5cdc8af7233bdb5bd79d13f76954e250d3"
+          },
+          {
+            "name": "metrics-7.json",
+            "sha256": "403756ec8d6ccf07b508ec3c9c5e7d371f208b0633c660ccdb583e67044e28cd"
+          },
+          {
+            "name": "metrics-8.json",
+            "sha256": "dc8da8477b82009eb82e1f7d0ad26587b0e541466eed04dfe7ff9913a4d05352"
+          },
+          {
+            "name": "metrics-9.json",
+            "sha256": "0bd66de1095dd16da571728230a1c019a52ffc4440e28e08c3039004d60186c5"
+          }
+        ]
+      }
+    }
+  },
+  "recovery_note": "Ten complete quantum rounds were combined from three sessions after interruptions. Incomplete rounds were excluded; original upstream training code and configurations were unchanged."
+}

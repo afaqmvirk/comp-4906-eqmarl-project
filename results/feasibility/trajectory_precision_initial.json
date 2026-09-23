@@ -1,0 +1,53 @@
+{
+  "scope": "frozen initialization, eight observed states, no training",
+  "q": 0.1,
+  "seed": 101,
+  "bank_size": 1024,
+  "objective": "mean critic value (linear, not nonlinear RL loss)",
+  "reference": "exact depolarizing channel expectation and gradient",
+  "exact_gradient_norm": 0.5033988952636719,
+  "exact_circuit_gradient_norm": 0.026699772104620934,
+  "results": [
+    {
+      "repetitions": 1,
+      "trials": 32,
+      "value_rmse": 0.03799935057759285,
+      "value_mean_bias": -0.002845337614417076,
+      "all_relative_gradient_rms_error": 0.26937901973724365,
+      "all_mean_gradient_relative_error": 0.036028824746608734,
+      "all_mean_gradient_cosine": 0.9656091928482056,
+      "circuit_relative_gradient_rms_error": 5.053812026977539,
+      "circuit_mean_gradient_relative_error": 0.6708781123161316,
+      "circuit_mean_gradient_cosine": 0.1873372495174408
+    },
+    {
+      "repetitions": 8,
+      "trials": 32,
+      "value_rmse": 0.013111411593854427,
+      "value_mean_bias": 0.00010891503188759089,
+      "all_relative_gradient_rms_error": 0.08703071624040604,
+      "all_mean_gradient_relative_error": 0.022532232105731964,
+      "all_mean_gradient_cosine": 0.9962711334228516,
+      "circuit_relative_gradient_rms_error": 1.6334233283996582,
+      "circuit_mean_gradient_relative_error": 0.4248042702674866,
+      "circuit_mean_gradient_cosine": 0.39829009771347046
+    },
+    {
+      "repetitions": 32,
+      "trials": 32,
+      "value_rmse": 0.00693749263882637,
+      "value_mean_bias": -0.0006256719352677464,
+      "all_relative_gradient_rms_error": 0.048413824290037155,
+      "all_mean_gradient_relative_error": 0.013866794295608997,
+      "all_mean_gradient_cosine": 0.9988394975662231,
+      "circuit_relative_gradient_rms_error": 0.9088704586029053,
+      "circuit_mean_gradient_relative_error": 0.260392963886261,
+      "circuit_mean_gradient_cosine": 0.6926594972610474
+    }
+  ],
+  "limitations": [
+    "A finite bank can retain bias even with more trajectories.",
+    "The mean of a nonlinear loss gradient need not equal the loss gradient at the mean value.",
+    "Pauli trajectories are not hardware measurement shots."
+  ]
+}

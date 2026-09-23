@@ -1,0 +1,41 @@
+{
+  "status": "reproduced_from_official_committed_trajectories",
+  "not_a_fresh_training_run": true,
+  "target_reward": 20.0,
+  "smoothing_window": 10,
+  "crossing_iteration_zero_based": {
+    "eqmarl": 568,
+    "sctde": 1640
+  },
+  "number_of_runs": {
+    "eqmarl": 10,
+    "sctde": 10
+  },
+  "source_files": {
+    "eqmarl": [
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-0.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-1.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-2.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-3.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-4.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-5.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-6.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-7.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-8.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_eqmarl_psi+\\20240501T152929\\metrics-9.json"
+    ],
+    "sctde": [
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-0.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-1.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-2.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-3.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-4.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-5.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-6.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-7.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-8.json",
+      "C:\\Users\\afaqv\\Carleton\\COMP4906\\experiment3\\upstream\\eqmarl\\experiment_output\\coingame_maa2c_mdp_sctde\\20240418T133421\\metrics-9.json"
+    ]
+  },
+  "official_repository_commit": "6b1b2e3817f661da81aad5e7188a362380dbdd1d"
+}

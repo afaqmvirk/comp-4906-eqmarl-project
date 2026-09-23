@@ -1,0 +1,116 @@
+{
+  "method": "Average five full reward trajectories by episode, then trailing 10-episode mean, then first crossing; zero-based indices; null means not reached within 3000 episodes.",
+  "statistical_note": "Exploratory paired whole-curve label swaps; not predeclared; no multiplicity adjustment.",
+  "exact_noise": [
+    {
+      "condition": "classical",
+      "runs": 5,
+      "final100": 25.024,
+      "reward20_index": 1775,
+      "reward25_index": 2660
+    },
+    {
+      "condition": "0",
+      "runs": 5,
+      "final100": 24.5,
+      "reward20_index": 834,
+      "reward20_savings_percent": 52.984234234234236,
+      "reward20_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      },
+      "reward25_index": 2026,
+      "reward25_savings_percent": 23.825629462608042,
+      "reward25_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      }
+    },
+    {
+      "condition": "0.01",
+      "runs": 5,
+      "final100": 24.96,
+      "reward20_index": 1053,
+      "reward20_savings_percent": 40.653153153153156,
+      "reward20_test": {
+        "p_two_sided": 0.125,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      },
+      "reward25_index": 1836,
+      "reward25_savings_percent": 30.965802329951146,
+      "reward25_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      }
+    },
+    {
+      "condition": "0.03",
+      "runs": 5,
+      "final100": 24.584,
+      "reward20_index": 616,
+      "reward20_savings_percent": 65.259009009009,
+      "reward20_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      },
+      "reward25_index": 1762,
+      "reward25_savings_percent": 33.7467117624953,
+      "reward25_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      }
+    },
+    {
+      "condition": "0.1",
+      "runs": 5,
+      "final100": 24.54,
+      "reward20_index": 1257,
+      "reward20_savings_percent": 29.166666666666668,
+      "reward20_test": {
+        "p_two_sided": 0.0625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      },
+      "reward25_index": 2576,
+      "reward25_savings_percent": 3.156708004509583,
+      "reward25_test": {
+        "p_two_sided": 0.5625,
+        "permutations": 32,
+        "permutations_with_non_crossing": 0
+      }
+    }
+  ],
+  "fresh_paper_reproduction": {
+    "sctde": {
+      "runs": 10,
+      "crossings": {
+        "20": 1718,
+        "25": 2621
+      },
+      "final100": 24.989
+    },
+    "eqmarl": {
+      "runs": 10,
+      "crossings": {
+        "20": 613,
+        "25": 2380
+      },
+      "final100": 24.396
+    }
+  },
+  "network": {
+    "mean_seconds": {
+      "eqmarl": 675.0256088960001,
+      "sctde": 838.7080576
+    },
+    "parameter_combinations": 20592,
+    "seeded_rows": 102960,
+    "favorable_fraction_of_usable_grid": 0.09626235833132385
+  }
+}

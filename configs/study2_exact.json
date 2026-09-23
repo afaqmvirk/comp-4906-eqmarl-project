@@ -1,0 +1,21 @@
+{
+  "name": "study2-exact-depolarizing-rerun-v1",
+  "source_grid": "configs/study2_pilot.yaml",
+  "episodes": 3000,
+  "evaluation_episodes": 100,
+  "chunk_episodes": 500,
+  "checkpoint_every": 100,
+  "workers": 3,
+  "threads_per_worker": 2,
+  "max_failures_per_job": 3,
+  "output_root": "results/study2_exact",
+  "primary_window": 100,
+  "sensitivity_window": 10,
+  "targets": [20, 25],
+  "priority_q": [0.0, 0.1, 0.01, 0.03],
+  "existing_exact": [
+    "results/feasibility/precision_v2/exact_density_q0_r1_seed101.json",
+    "results/feasibility/precision_v2/exact_density_q0.1_r1_seed101.json",
+    "results/feasibility/exact_noise_replication/exact_density_q0.1_r1_seed202.json"
+  ]
+}

@@ -1,0 +1,6 @@
+# Official paper-tag dependencies.
+-r upstream/eqmarl-paper-iclr2025/requirements.txt
+
+# The tagged runner imports `yaml`, but PyYAML is absent from requirements.txt.
+# Version 6.0.1 was the newest compatible release at the 2024-04-18 cutoff.
+PyYAML==6.0.1

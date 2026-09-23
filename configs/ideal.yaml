@@ -1,0 +1,25 @@
+name: ideal-official-trajectory-reproduction
+protocol:
+  agents: 2
+  qubits_per_agent: 4
+  observations_per_step: 2
+network:
+  entanglement_rate_hz: inf
+  transmission_success_probability: 1.0
+  base_latency_s: 0.0
+  distance_km: 0.0
+  local_quantum_processing_s: 0.0
+  classical_bandwidth_bps: inf
+  memory_t2_s: inf
+  base_compute_step_s: 0.01
+learning:
+  metric: undiscounted_reward
+  target_reward: 20.0
+  steps_per_iteration: 50
+  smoothing_window: 10
+  trajectory_seeds: 10
+  quantum_experiment: coingame_maa2c_mdp_eqmarl_psi+
+  classical_experiment: coingame_maa2c_mdp_sctde
+  official_repo: upstream/eqmarl
+network_seeds: [101]
+

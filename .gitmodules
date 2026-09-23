@@ -1,0 +1,8 @@
+[submodule "upstream/eqmarl"]
+	path = upstream/eqmarl
+	url = https://github.com/news-vt/eqmarl.git
+	ignore = untracked
+[submodule "upstream/eqmarl-paper-iclr2025"]
+	path = upstream/eqmarl-paper-iclr2025
+	url = https://github.com/news-vt/eqmarl.git
+	ignore = untracked
